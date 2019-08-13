@@ -6,14 +6,5 @@
     </database-info>
     <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
     <schema name="PUBLIC" catalog="TESTDB"/>
-    <table name="STUDENT" schema="PUBLIC" catalog="TESTDB" type="TABLE">
-      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="NUMBER" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="STRING" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="DATE" sqlType="DATE" precision="8" scale="0" nullable="true" jdbcType="91"/>
-      <column name="DAYS" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="NAME" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="CONSTRAINT_B" columns="ID"/>
-    </table>
   </data-source>
 </component>

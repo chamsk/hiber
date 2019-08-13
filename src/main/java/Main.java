@@ -1,7 +1,4 @@
-import entities.Address;
-import entities.OTOAddress;
-import entities.OTOPerson;
-import entities.Student;
+import entities.*;
 import enums.Days;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,7 +6,9 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Kor on 06.08.2019.
@@ -33,11 +32,25 @@ public class Main {
            // session.save(fry);
 
 
-            OTOAddress address = new OTOAddress("lenina");
-            OTOPerson person = new OTOPerson("Vasya",address);
+            //ONE TO ONE
+//            OTOAddress address = new OTOAddress("lenina");
+//            OTOPerson person = new OTOPerson("Vasya",address);
+//
+//            session.persist(address);
+//            session.persist(person);
 
-            session.persist(address);
+
+            //ONE TO MANY
+
+            OTMPerson person = new OTMPerson("bill");
+            List<OTMAddress> addresses = new ArrayList<>();
+            addresses.add(new OTMAddress("UDMurtskaya"));
+            addresses.add(new OTMAddress("Ryavazanava"));
+            person.setAddresses(addresses);
+
+            
             session.persist(person);
+            session.persist(addresses);
 
             session.getTransaction().commit();
             session.close();
