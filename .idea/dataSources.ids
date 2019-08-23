@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="H2 - testDB" uuid="cfaaa23e-aab6-4756-82bc-e448606cf791">
+  <data-source name="H2 - testDB9" uuid="725e17eb-61cb-420e-bbc6-6ad358c84f1e">
     <database-info product="H2" version="1.4.196 (2017-06-10)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.196 (2017-06-10)">
       <identifier-quote-string>&quot;</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
-    <schema name="PUBLIC" catalog="TESTDB"/>
+    <schema name="PUBLIC" catalog="TESTDB9"/>
+    <table name="JOINTAB" schema="PUBLIC" catalog="TESTDB9" type="TABLE">
+      <column name="ADDRID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="PERSONID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK82I19KO90RUH05MK43FIJS3I0" columns="ADDRID" ref-table="MTMADDRESS" ref-schema="PUBLIC" ref-catalog="TESTDB9" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FKTI6TCU8IC3A6NQSXHA3AAY08C" columns="PERSONID" ref-table="MTMPERSON" ref-schema="PUBLIC" ref-catalog="TESTDB9" ref-columns="ID" update-rule="1" delete-rule="1" deferrability="2"/>
+      <index name="FK82I19KO90RUH05MK43FIJS3I0_INDEX_D" unique="false" columns="ADDRID"/>
+      <index name="FKTI6TCU8IC3A6NQSXHA3AAY08C_INDEX_D" unique="false" columns="PERSONID"/>
+    </table>
+    <table name="MTMADDRESS" schema="PUBLIC" catalog="TESTDB9" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="MTMHOUSE" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="MTMSTREET" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_4" columns="ID"/>
+    </table>
+    <table name="MTMPERSON" schema="PUBLIC" catalog="TESTDB9" type="TABLE">
+      <column name="ID" sqlType="INTEGER" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="MTMAGE" sqlType="INTEGER" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="MTMNAME" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="CONSTRAINT_2" columns="ID"/>
+    </table>
   </data-source>
 </component>

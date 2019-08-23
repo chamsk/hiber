@@ -15,8 +15,7 @@ public class OTMPerson {
     private String name;
 
 
-    @OneToMany
-
+    @OneToMany(mappedBy = "person")
     List<OTMAddress> addresses;
 
     public OTMPerson() {}

@@ -3,6 +3,7 @@ package entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class OTMAddress {
@@ -13,6 +14,8 @@ public class OTMAddress {
     private String street;
 
 
+    @ManyToOne
+    OTMPerson person;
 
 
 
@@ -29,5 +32,9 @@ public class OTMAddress {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public void setPerson(OTMPerson person) {
+        this.person = person;
     }
 }
