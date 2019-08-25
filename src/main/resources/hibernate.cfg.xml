@@ -6,7 +6,7 @@
     <session-factory>
         <property name="connection.password">1</property>
         <property name="connection.username">sa</property>
-        <property name="connection.url">jdbc:h2:~/testDB9</property>
+        <property name="connection.url">jdbc:h2:~/testDB10</property>
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
 
 
