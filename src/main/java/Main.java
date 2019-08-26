@@ -66,44 +66,62 @@ public class Main {
 
 
 
-            //MANY TO MANY
+            //            //MANY TO MANY
+//
+//            MTMPerson person = new MTMPerson("Ivan",17);
+//            MTMPerson person1 = new MTMPerson("Shisha",24);
+//
+//            MTMAddress address = new MTMAddress(16,"timStreet");
+//            MTMAddress address1 = new MTMAddress(9,"timStreet");
+//            MTMAddress address2 = new MTMAddress(1,"timStreet");
+//            MTMAddress address3 = new MTMAddress(11,"timStreet");
+//            List<MTMAddress> list = new ArrayList<MTMAddress>();
+//            list.add(address);
+//            list.add(address1);
+//            List<MTMAddress> list1 = new ArrayList<MTMAddress>();
+//            list1.add(address2);
+//            list1.add(address3);
+//            person.setList(list);
+//            person1.setList(list1);
+//            List<MTMPerson> personList = new ArrayList<>();
+//            personList.add(person);
+//            List<MTMPerson> personList1 = new ArrayList<>();
+//            personList1.add(person1);
+//            address.setPerson(personList);
+//            address1.setPerson(personList);
+//            address2.setPerson(personList1);
+//            address3.setPerson(personList1);
+//
+//            session.persist(person);
+//            session.persist(person1);
+//            session.persist(address);
+//            session.persist(address1);
+//            session.persist(address2);
+//            session.persist(address3);
 
-            MTMPerson person = new MTMPerson("Ivan",17);
-            MTMPerson person1 = new MTMPerson("Shisha",24);
-
-            MTMAddress address = new MTMAddress(16,"timStreet");
-            MTMAddress address1 = new MTMAddress(9,"timStreet");
-            MTMAddress address2 = new MTMAddress(1,"timStreet");
-            MTMAddress address3 = new MTMAddress(11,"timStreet");
-            List<MTMAddress> list = new ArrayList<MTMAddress>();
-            list.add(address);
-            list.add(address1);
-            List<MTMAddress> list1 = new ArrayList<MTMAddress>();
-            list1.add(address2);
-            list1.add(address3);
-            person.setList(list);
-            person1.setList(list1);
-            List<MTMPerson> personList = new ArrayList<>();
-            personList.add(person);
-            List<MTMPerson> personList1 = new ArrayList<>();
-            personList1.add(person1);
-            address.setPerson(personList);
-            address1.setPerson(personList);
-            address2.setPerson(personList1);
-            address3.setPerson(personList1);
-
-            session.persist(person);
-            session.persist(person1);
-            session.persist(address);
-            session.persist(address1);
-            session.persist(address2);
-            session.persist(address3);
+//
+//
+//            //LOAD
+//            MTMPerson mtmPerson = session.load(MTMPerson.class,25);
+//            List<MTMAddress> addresses = mtmPerson.getList();
 
 
 
-            //LOAD
-            MTMPerson mtmPerson = session.load(MTMPerson.class,25);
-            List<MTMAddress> addresses = mtmPerson.getList();
+
+
+            //HQL
+
+//            Query query = session.createQuery("from MTMPerson where id = 1");
+//            MTMPerson person = (MTMPerson) query.uniqueResult();
+//            System.out.println(person.getName());
+
+//            Query query = session.createQuery("from MTMPerson ");
+//            List<MTMPerson> persons = query.list();
+//            for (MTMPerson p:persons) {
+//                System.out.println(p.getName());
+//            }
+
+
 
 
             session.getTransaction().commit();
