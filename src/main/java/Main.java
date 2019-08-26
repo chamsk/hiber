@@ -71,8 +71,8 @@ public class Main {
             //            //MANY TO MANY
 
 //
-//            MTMPerson person = new MTMPerson("Ivan",17);
-//            MTMPerson person1 = new MTMPerson("Shisha",24);
+//            MTMPerson person = new MTMPerson("vova",13);
+//            MTMPerson person1 = new MTMPerson("grisha",20);
 //
 //            MTMAddress address = new MTMAddress(16,"timStreet");
 //            MTMAddress address1 = new MTMAddress(9,"timStreet");
@@ -102,7 +102,7 @@ public class Main {
 //            session.persist(address2);
 //            session.persist(address3);
 
-//
+
 //
 //            //LOAD
 //            MTMPerson mtmPerson = session.load(MTMPerson.class,25);
@@ -123,6 +123,23 @@ public class Main {
 //            for (MTMPerson p:persons) {
 //                System.out.println(p.getName());
 //            }
+
+//            Query query = session.createQuery("from MTMPerson p order by p.age");
+//            List<MTMPerson> persons = query.list();
+//            for (MTMPerson p:persons) {
+//                System.out.print(p.getName() + " ");
+//                System.out.println(p.getAge());
+//            }
+//
+//            Query query = session.createQuery("select p.age from MTMPerson p group by p.age having p.age = 222");
+//            List<MTMPerson> persons = query.list();
+//            for (MTMPerson p:persons) {
+//                System.out.print(p.getName() + " ");
+//                System.out.println(p.getAge());
+//            }
+
+
+
 
 
 
