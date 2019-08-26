@@ -24,9 +24,11 @@ public class MTMPerson {
     public MTMPerson() {
     }
 
+
     public MTMPerson(String name, int age) {
         this.name = name;
         this.age = age;
+
     }
 
     public List<MTMAddress> getList() {
@@ -35,5 +37,10 @@ public class MTMPerson {
 
     public void setList(List<MTMAddress> list) {
         this.list = list;
+    }
+
+
+    public String getName() {
+        return name;
     }
 }
