@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -138,6 +139,37 @@ public class Main {
 //                System.out.println(p.getAge());
 //            }
 
+
+
+
+            //CRUD
+            //session.createQuery("insert into MTMPerson (age,name) select p.age+7 ,concat(p.name,'ww') from MTMPerson p where p.id = 2").executeUpdate();
+            //session.save(fry);
+            // session.createQuery("update MTMPerson p set p.age = 99 where p.id=1").executeUpdate();
+            //session.createQuery("delete MTMPerson p where p.age = 13").executeUpdate();
+
+
+            //NATIVE SQL
+//            NativeQuery nativeQuery = session.createNativeQuery("select * from MTMPerson");
+//            List<Object[]> list = nativeQuery.getResultList();
+//            for (Object[] objects:list
+//                 ) {
+//                int i = (int)objects[0];
+//                int age = (int)objects[1];
+//                String name = (String)objects[2];
+//                System.out.println(i + " " + age + " " + name);
+//            }
+
+//            NativeQuery nativeQuery = session.createNativeQuery("select * from MTMPerson",MTMPerson.class);
+//            List<MTMPerson> list = nativeQuery.getResultList();
+//            for (MTMPerson p:list
+//                 ) {
+//                System.out.println(p.getAge() + " " + p.getName());
+//            }
+
+
+
+           // Query query = session.createQuery("select MTMPerson from MTMPerson p left join MTMAddress a on(p.age = a.id)");
 
 
 
